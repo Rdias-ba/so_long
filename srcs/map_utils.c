@@ -6,7 +6,7 @@
 /*   By: rdias-ba <rdias-ba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 17:31:19 by rdias-ba          #+#    #+#             */
-/*   Updated: 2023/05/19 20:34:52 by rdias-ba         ###   ########.fr       */
+/*   Updated: 2023/05/22 22:30:27 by rdias-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,15 +54,23 @@ static char	*get_map(int fd)
 		error_message("lecture non valide de la map");
 		return (NULL);
 	}
-	ft_printf("%s", buf);
 	return (buf);
 }
 
 static void	map_parsing(int fd, t_game_data *data)
 {
+	data->elems.exits = 0;
+	data->elems.items = 0;
+	data->elems.player = 0;
 	data->map = ft_split(get_map(fd), '\n');
+	if (!check_walls(data))
+		return (error_message_free(data, "la map n'est pas bien fermée"));
 	if (!check_rectangle(data))
-		return (free_map(data));
+		return (error_message_free(data, "la map n'est pas rectangle"));
+	if (!check_ingame(data))
+		return (error_message_free(data, "la map intérieure n'est pas valide"));
+	if (!check_playable(data))
+		return (error_message_free(data, "la map ne peut pas être finie"));
 }
 
 void	mapping(char **argv, t_game_data *data)
@@ -77,4 +85,3 @@ void	mapping(char **argv, t_game_data *data)
 		return (error_message("le fichier n'a pas pue être lu"));
 	map_parsing(fd, data);
 }
-
