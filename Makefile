@@ -6,7 +6,7 @@
 #    By: rdias-ba <rdias-ba@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/16 15:36:56 by rdias-ba          #+#    #+#              #
-#    Updated: 2023/05/22 20:32:43 by rdias-ba         ###   ########.fr        #
+#    Updated: 2023/05/23 19:24:58 by rdias-ba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,8 @@ LIB_DIR		= libft/
 MLX_DIR		= mlx/
 HEADERS_DIR	= headers/
 
-SRCS		= main.c error.c map_utils.c map_checking.c map_path_checking.c\
+SRCS		= main.c error.c map_utils.c map_checking.c map_path_checking.c game_control.c \
+				images_control.c\
 
 OBJS		= $(SRCS:%.c=$(OBJS_DIR)%.o)
 

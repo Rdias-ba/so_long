@@ -6,7 +6,7 @@
 /*   By: rdias-ba <rdias-ba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 20:37:42 by rdias-ba          #+#    #+#             */
-/*   Updated: 2023/05/22 22:30:22 by rdias-ba         ###   ########.fr       */
+/*   Updated: 2023/05/23 19:59:59 by rdias-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,13 @@ int	check_walls(t_game_data *data)
 
 int	check_rectangle(t_game_data *data)
 {
-	data->map_h = 0;
-	data->map_w = 0;
-	while (data->map[data->map_h][data->map_w])
-		data->map_w++;
-	while (data->map[data->map_h] != 0)
-		data->map_h++;
-	if (data->map_h == data->map_w || data->map_h < 3 || data->map_w < 3)
+	data->map_y = 0;
+	data->map_x = 0;
+	while (data->map[data->map_y][data->map_x])
+		data->map_x++;
+	while (data->map[data->map_y] != 0)
+		data->map_y++;
+	if (data->map_y == data->map_x || data->map_y < 3 || data->map_x < 3)
 		return (0);
 	return (1);
 }

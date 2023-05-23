@@ -6,7 +6,7 @@
 /*   By: rdias-ba <rdias-ba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 18:25:39 by rdias-ba          #+#    #+#             */
-/*   Updated: 2023/05/22 21:59:00 by rdias-ba         ###   ########.fr       */
+/*   Updated: 2023/05/23 20:02:24 by rdias-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,8 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	mapping(argv, &data);
-	data.mlx = mlx_init();
-	data.mlx_win = mlx_new_window(data.mlx, 1200, 800, "Salut!");
-	mlx_mouse_show(data.mlx, data.mlx_win);
-	mlx_loop(data.mlx);
+	if (data.map == NULL)
+		return (0);
+	open_game(&data);
 	return (0);
 }

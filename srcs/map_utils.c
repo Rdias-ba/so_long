@@ -6,7 +6,7 @@
 /*   By: rdias-ba <rdias-ba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 17:31:19 by rdias-ba          #+#    #+#             */
-/*   Updated: 2023/05/22 22:30:27 by rdias-ba         ###   ########.fr       */
+/*   Updated: 2023/05/23 17:09:30 by rdias-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,16 @@ static char	*get_map(int fd)
 
 static void	map_parsing(int fd, t_game_data *data)
 {
+	char	*map_line;
+
+	map_line = get_map(fd);
 	data->elems.exits = 0;
 	data->elems.items = 0;
 	data->elems.player = 0;
-	data->map = ft_split(get_map(fd), '\n');
+	data->map = ft_split(map_line, '\n');
+	free(map_line);
+	if (!data->map)
+		return ;
 	if (!check_walls(data))
 		return (error_message_free(data, "la map n'est pas bien fermée"));
 	if (!check_rectangle(data))
@@ -84,4 +90,5 @@ void	mapping(char **argv, t_game_data *data)
 	if (fd <= 0)
 		return (error_message("le fichier n'a pas pue être lu"));
 	map_parsing(fd, data);
+	close(fd);
 }
