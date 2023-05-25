@@ -6,7 +6,7 @@
 /*   By: rdias-ba <rdias-ba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 19:19:59 by rdias-ba          #+#    #+#             */
-/*   Updated: 2023/05/25 19:21:02 by rdias-ba         ###   ########.fr       */
+/*   Updated: 2023/05/25 21:55:02 by rdias-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ static void	images_init_monster(t_game_data *data)
 			"./tilesets/monster2.xpm", &data->imgs.img_x, &data->imgs.img_y);
 	data->imgs.img_monster3 = mlx_xpm_file_to_image(data->mlx,
 			"./tilesets/monster3.xpm", &data->imgs.img_x, &data->imgs.img_y);
-
 }
 
 void	images_init(t_game_data *data)
