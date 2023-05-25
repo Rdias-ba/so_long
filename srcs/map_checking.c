@@ -6,7 +6,7 @@
 /*   By: rdias-ba <rdias-ba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 20:37:42 by rdias-ba          #+#    #+#             */
-/*   Updated: 2023/05/25 04:22:13 by rdias-ba         ###   ########.fr       */
+/*   Updated: 2023/05/25 19:40:08 by rdias-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ int	check_ingame(t_game_data *data)
 				get_elems(i, j, 'E', data);
 			if (data->map[i][j] != '0' && data->map[i][j] != '1'
 			&& data->map[i][j] != 'C' && data->map[i][j] != 'P'
-			&& data->map[i][j] != 'E')
+			&& data->map[i][j] != 'E' && data->map[i][j] != 'M')
 				return (0);
 		}
 	}

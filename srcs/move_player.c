@@ -6,7 +6,7 @@
 /*   By: rdias-ba <rdias-ba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 00:39:38 by rdias-ba          #+#    #+#             */
-/*   Updated: 2023/05/25 04:08:24 by rdias-ba         ###   ########.fr       */
+/*   Updated: 2023/05/25 19:32:29 by rdias-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,19 @@ void	player_move(int p_x, int p_y, void *img, t_game_data *data)
 		return ;
 	else if (data->map[p_y][p_x] == 'E')
 		data->e_found++;
+	else if (data->map[p_y][p_x] == 'M')
+	{
+		ft_printf("Vous êtes mort!!");
+		close_game(data);
+	}
 	data->steps++;
 	data->map[data->elems.p_y][data->elems.p_x] = '0';
-	put_images(data->elems.p_y, data->elems.p_x, '0', data);
+	put_image(data->elems.p_y, data->elems.p_x, data->imgs.img_floor, data);
 	data->map[p_y][p_x] = 'P';
-	mlx_put_image_to_window(data->mlx, data->mlx_win, img, p_x * 64, p_y * 64);
+	put_image(p_y, p_x, img, data);
 	data->elems.p_x = p_x;
 	data->elems.p_y = p_y;
+	display_steps(data);
 	if (data->c_found == data->elems.items
 		&& data->e_found == data->elems.exits)
 	{

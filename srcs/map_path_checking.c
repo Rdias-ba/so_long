@@ -6,7 +6,7 @@
 /*   By: rdias-ba <rdias-ba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 20:31:18 by rdias-ba          #+#    #+#             */
-/*   Updated: 2023/05/23 19:59:12 by rdias-ba         ###   ########.fr       */
+/*   Updated: 2023/05/25 19:28:00 by rdias-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static int	filling(int x, int y, char **temp_map, t_game_data *data)
 
 	if (x < 0 || y < 0 || x >= data->map_x || y >= data->map_y)
 		return (0);
-	if (temp_map[y][x] == 'X' || temp_map[y][x] == '1')
+	if (temp_map[y][x] == 'X' || temp_map[y][x] == '1' || temp_map[y][x] == 'M')
 		return (0);
 	else if (temp_map[y][x] == 'C')
 		collectibles++;
