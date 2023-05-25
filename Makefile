@@ -6,7 +6,7 @@
 #    By: rdias-ba <rdias-ba@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/16 15:36:56 by rdias-ba          #+#    #+#              #
-#    Updated: 2023/05/23 19:24:58 by rdias-ba         ###   ########.fr        #
+#    Updated: 2023/05/25 00:41:33 by rdias-ba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ LIB_NAME	= libft
 MLX_NAME	= mlx
 CC			= gcc
 CFLAGS		= #-Wextra -Werror -Wall
-MLX_DEPENDENCIES = -lmlx -lX11 -lXext -lbsd -lm
+MLX_DEPENDENCIES = -lmlx -lX11 -lXext -lbsd -lm -lz
 
 SRCS_DIR	= srcs/
 OBJS_DIR	= objs/
@@ -24,7 +24,7 @@ MLX_DIR		= mlx/
 HEADERS_DIR	= headers/
 
 SRCS		= main.c error.c map_utils.c map_checking.c map_path_checking.c game_control.c \
-				images_control.c\
+				images_control.c move_player.c\
 
 OBJS		= $(SRCS:%.c=$(OBJS_DIR)%.o)
 
