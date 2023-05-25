@@ -6,16 +6,16 @@
 #    By: rdias-ba <rdias-ba@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/16 15:36:56 by rdias-ba          #+#    #+#              #
-#    Updated: 2023/05/25 00:41:33 by rdias-ba         ###   ########.fr        #
+#    Updated: 2023/05/25 04:34:45 by rdias-ba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= so_long
-LIB_NAME	= libft
-MLX_NAME	= mlx
-CC			= gcc
-CFLAGS		= #-Wextra -Werror -Wall
-MLX_DEPENDENCIES = -lmlx -lX11 -lXext -lbsd -lm -lz
+NAME				= so_long
+LIB_NAME			= libft
+MLX_NAME			= mlx
+CC					= gcc
+CFLAGS				= -Wextra -Werror -Wall
+MLX_DEPENDENCIES 	= -lmlx -lX11 -lXext -lbsd -lm -lz
 
 SRCS_DIR	= srcs/
 OBJS_DIR	= objs/
@@ -23,8 +23,10 @@ LIB_DIR		= libft/
 MLX_DIR		= mlx/
 HEADERS_DIR	= headers/
 
-SRCS		= main.c error.c map_utils.c map_checking.c map_path_checking.c game_control.c \
-				images_control.c move_player.c\
+HEADERS		= so_long.h
+
+SRCS		= main.c error.c map_utils.c map_checking.c map_path_checking.c \
+				game_control.c images_control.c move_player.c\
 
 OBJS		= $(SRCS:%.c=$(OBJS_DIR)%.o)
 
@@ -33,7 +35,7 @@ all: $(NAME)
 $(OBJS_DIR):
 			mkdir -p $@
 
-$(OBJS): $(OBJS_DIR)%.o: $(SRCS_DIR)%.c
+$(OBJS): $(OBJS_DIR)%.o: $(SRCS_DIR)%.c $(HEADERS_DIR)$(HEADERS)
 			$(CC) $(CFLAGS) -I$(MLX_NAME) -I$(LIB_NAME) -O3 -g -c $< -o $@
 
 $(NAME): $(OBJS_DIR) $(LIB_DIR)$(LIB_NAME).a $(OBJS)

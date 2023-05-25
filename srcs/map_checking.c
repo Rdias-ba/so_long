@@ -6,7 +6,7 @@
 /*   By: rdias-ba <rdias-ba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 20:37:42 by rdias-ba          #+#    #+#             */
-/*   Updated: 2023/05/23 19:59:59 by rdias-ba         ###   ########.fr       */
+/*   Updated: 2023/05/25 04:22:13 by rdias-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 int	check_walls(t_game_data *data)
 {
-	int	i;
-	int	j;
-	int	map_w;
+	int		i;
+	int		j;
+	size_t	map_w;
 
+	i = 0;
 	map_w = ft_strlen(data->map[i]) - 1;
 	j = -1;
-	i = 0;
 	while (data->map[i][++j])
 		if (data->map[i][j] != '1')
 			return (0);
