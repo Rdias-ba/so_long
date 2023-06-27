@@ -6,7 +6,7 @@
 /*   By: rdias-ba <rdias-ba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 17:17:49 by rdias-ba          #+#    #+#             */
-/*   Updated: 2023/05/25 20:08:24 by rdias-ba         ###   ########.fr       */
+/*   Updated: 2023/06/27 17:03:17 by rdias-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,8 @@ void	open_game(t_game_data *data)
 	data->loop_timer = 0;
 	data->imgs.img_loop = 1;
 	images_init(data);
-	data->mlx_win = mlx_new_window(data->mlx, data->map_x * 64,
-			data->map_y * 64, "so_long");
+	data->mlx_win = mlx_new_window(data->mlx, data->map_x * TEXTURE_RES,
+			data->map_y * TEXTURE_RES, "so_long");
 	put_images_from_data(data);
 	display_steps(data);
 	mlx_hook(data->mlx_win, 17, 0, &close_game, data);

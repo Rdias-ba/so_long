@@ -6,7 +6,7 @@
 /*   By: rdias-ba <rdias-ba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:58:04 by rdias-ba          #+#    #+#             */
-/*   Updated: 2023/05/25 19:17:03 by rdias-ba         ###   ########.fr       */
+/*   Updated: 2023/06/27 17:03:00 by rdias-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@
 # define KEY_LEFT 65361
 # define KEY_DOWN 65364
 # define KEY_RIGHT 65363
+# define LOOP_RATE 15000
+# define TEXTURE_RES 64
 
 typedef struct s_img_data
 {

@@ -6,7 +6,7 @@
 /*   By: rdias-ba <rdias-ba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 19:19:59 by rdias-ba          #+#    #+#             */
-/*   Updated: 2023/05/25 21:55:02 by rdias-ba         ###   ########.fr       */
+/*   Updated: 2023/06/27 17:03:35 by rdias-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,27 +57,28 @@ void	put_images_from_map(int y, int x, t_game_data *data)
 {
 	if (data->map[y][x] == '1')
 		mlx_put_image_to_window(data->mlx, data->mlx_win,
-			data->imgs.img_wall, x * 64, y * 64);
+			data->imgs.img_wall, x * TEXTURE_RES, y * TEXTURE_RES);
 	else if (data->map[y][x] == '0')
 		mlx_put_image_to_window(data->mlx, data->mlx_win,
-			data->imgs.img_floor, x * 64, y * 64);
+			data->imgs.img_floor, x * TEXTURE_RES, y * TEXTURE_RES);
 	else if (data->map[y][x] == 'C')
 		mlx_put_image_to_window(data->mlx, data->mlx_win,
-			data->imgs.img_collec, x * 64, y * 64);
+			data->imgs.img_collec, x * TEXTURE_RES, y * TEXTURE_RES);
 	else if (data->map[y][x] == 'P')
 		mlx_put_image_to_window(data->mlx, data->mlx_win,
-			data->imgs.img_player, x * 64, y * 64);
+			data->imgs.img_player, x * TEXTURE_RES, y * TEXTURE_RES);
 	else if (data->map[y][x] == 'E')
 		mlx_put_image_to_window(data->mlx, data->mlx_win,
-			data->imgs.img_exit, x * 64, y * 64);
+			data->imgs.img_exit, x * TEXTURE_RES, y * TEXTURE_RES);
 	else if (data->map[y][x] == 'M')
 		mlx_put_image_to_window(data->mlx, data->mlx_win,
-			data->imgs.img_monster, x * 64, y * 64);
+			data->imgs.img_monster, x * TEXTURE_RES, y * TEXTURE_RES);
 }
 
 void	put_image(int y, int x, void *img, t_game_data *data)
 {
-	mlx_put_image_to_window(data->mlx, data->mlx_win, img, x * 64, y * 64);
+	mlx_put_image_to_window(data->mlx, data->mlx_win, img,
+		x * TEXTURE_RES, y * TEXTURE_RES);
 }
 
 void	put_images_from_data(t_game_data *data)

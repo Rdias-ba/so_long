@@ -6,7 +6,7 @@
 /*   By: rdias-ba <rdias-ba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 16:45:30 by rdias-ba          #+#    #+#             */
-/*   Updated: 2023/05/25 19:57:00 by rdias-ba         ###   ########.fr       */
+/*   Updated: 2023/06/27 16:50:04 by rdias-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int	anim(t_game_data *data)
 	int	x;
 
 	data->loop_timer++;
-	if (data->loop_timer < 7500)
+	if (data->loop_timer < LOOP_RATE)
 		return (0);
 	data->loop_timer = 0;
 	data->imgs.img_loop++;

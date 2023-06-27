@@ -6,7 +6,7 @@
 /*   By: rdias-ba <rdias-ba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 18:25:39 by rdias-ba          #+#    #+#             */
-/*   Updated: 2023/05/23 20:02:24 by rdias-ba         ###   ########.fr       */
+/*   Updated: 2023/06/27 16:23:33 by rdias-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		error_message("Un seul argument .bet requis");
+		error_message("Un seul argument .ber requis");
 		return (0);
 	}
 	mapping(argv, &data);
